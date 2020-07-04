@@ -1,0 +1,1552 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "AWS CloudFormation generated template --AWSMP::30ba0dc2-ba4a-48e4-a40c-cca1b4acf476::NEWGUID",
+    "Metadata": {
+        "AWS::CloudFormation::Interface": {
+            "ParameterGroups": [
+                {
+                    "Label": {
+                        "default": "Application configuration"
+                    },
+                    "Parameters": [
+                        "ApplicationUsername",
+                        "ApplicationPassword",
+                        "InstancesType",
+                        "InstancesDataDiskType",
+                        "InstancesDataDiskSize"
+                    ]
+                },
+                {
+                    "Label": {
+                        "default": "Networking configuration"
+                    },
+                    "Parameters": [
+                        "SSHKeyName",
+                        "IPRangeSSH",
+                        "IPRangeApplication",
+                        "AvailabilityZone",
+                        "SecondAvailabilityZone"
+                    ]
+                },
+                {
+                    "Label": {
+                        "default": "Database configuration"
+                    },
+                    "Parameters": [
+                        "DatabasePassword",
+                        "DatabaseInstanceClass",
+                        "MultiAZ"
+                    ]
+                }
+            ],
+            "ParameterLabels": {
+                "ApplicationUsername": {
+                    "default": "WordPress admin username"
+                },
+                "ApplicationPassword": {
+                    "default": "WordPress password"
+                },
+                "InstancesType": {
+                    "default": "Application instance type"
+                },
+                "InstancesDataDiskType": {
+                    "default": "Data disk type"
+                },
+                "InstancesDataDiskSize": {
+                    "default": "Data disk size"
+                },
+                "SSHKeyName": {
+                    "default": "SSH key name"
+                },
+                "IPRangeSSH": {
+                    "default": "SSH source"
+                },
+                "IPRangeApplication": {
+                    "default": "Application source"
+                },
+                "AvailabilityZone": {
+                    "default": "Availability zone"
+                },
+                "SecondAvailabilityZone": {
+                    "default": "Additional Availability Zone"
+                },
+                "DatabaseInstanceClass": {
+                    "default": "Database class"
+                },
+                "MultiAZ": {
+                    "default": "Multi-AZ database"
+                },
+                "DatabasePassword": {
+                    "default": "Aurora admin password"
+                }
+            }
+        },
+        "AWS::CloudFormation::Designer": {
+            "67253fca-371a-4066-b077-ae57e7d5d820": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 900,
+                    "y": 480
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "bdd243b8-5989-42ce-8180-cafdc78170b5": {
+                "size": {
+                    "width": 780,
+                    "height": 780
+                },
+                "position": {
+                    "x": 60,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": [
+                    "65e11640-c825-4a0b-b2e9-eeeec75fa462",
+                    "86bd40b3-777a-4818-80a8-4e857f28f858",
+                    "77a8c444-5136-428b-9be8-8bdde06a3a60",
+                    "d65c2aa1-fcf3-4fe3-96d5-20ae8a1b46a7",
+                    "197ada66-61df-406e-8477-a5da343a1e40",
+                    "b8fce228-889f-47e3-b583-b64ef35c3776",
+                    "f13ddd31-c041-44c8-ae3e-76e4bf2d1d9b",
+                    "e5368e62-6e55-44ee-b6d1-43296b7058ec"
+                ]
+            },
+            "65e11640-c825-4a0b-b2e9-eeeec75fa462": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 690,
+                    "y": 150
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "86bd40b3-777a-4818-80a8-4e857f28f858": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 690,
+                    "y": 270
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "77a8c444-5136-428b-9be8-8bdde06a3a60": {
+                "size": {
+                    "width": 150,
+                    "height": 150
+                },
+                "position": {
+                    "x": 600,
+                    "y": 450
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "d65c2aa1-fcf3-4fe3-96d5-20ae8a1b46a7": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 390,
+                    "y": 660
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "82e228f1-74d0-4f2b-adde-d55bdde0a607": {
+                "source": {
+                    "id": "d65c2aa1-fcf3-4fe3-96d5-20ae8a1b46a7"
+                },
+                "target": {
+                    "id": "d65c2aa1-fcf3-4fe3-96d5-20ae8a1b46a7"
+                }
+            },
+            "197ada66-61df-406e-8477-a5da343a1e40": {
+                "size": {
+                    "width": 240,
+                    "height": 240
+                },
+                "position": {
+                    "x": 90,
+                    "y": 450
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [
+                    "0042b644-9bd0-4c6e-9427-a7a1ed804114"
+                ],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "f5d9a32c-31d9-4294-a915-5a0149452e19": {
+                "source": {
+                    "id": "197ada66-61df-406e-8477-a5da343a1e40"
+                },
+                "target": {
+                    "id": "77a8c444-5136-428b-9be8-8bdde06a3a60"
+                }
+            },
+            "b8fce228-889f-47e3-b583-b64ef35c3776": {
+                "size": {
+                    "width": 150,
+                    "height": 150
+                },
+                "position": {
+                    "x": 390,
+                    "y": 450
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "fa159be2-95e8-4114-ae44-9353a773c550": {
+                "size": {
+                    "width": 330,
+                    "height": 330
+                },
+                "position": {
+                    "x": 900,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": [
+                    "947e394a-d2f3-467e-a56a-a236bfc52d50",
+                    "d508c6a3-a32c-4929-a810-50f928ce9d12",
+                    "c64a8751-ec82-49dc-9c4d-f0d01deba090"
+                ],
+                "iscontainedinside": [
+                    "b8fce228-889f-47e3-b583-b64ef35c3776",
+                    "77a8c444-5136-428b-9be8-8bdde06a3a60"
+                ]
+            },
+            "947e394a-d2f3-467e-a56a-a236bfc52d50": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 930,
+                    "y": 150
+                },
+                "z": 2,
+                "parent": "fa159be2-95e8-4114-ae44-9353a773c550",
+                "embeds": [],
+                "isassociatedwith": [
+                    "67253fca-371a-4066-b077-ae57e7d5d820",
+                    "65e11640-c825-4a0b-b2e9-eeeec75fa462",
+                    "d65c2aa1-fcf3-4fe3-96d5-20ae8a1b46a7"
+                ],
+                "iscontainedinside": [
+                    "fa159be2-95e8-4114-ae44-9353a773c550"
+                ]
+            },
+            "d508c6a3-a32c-4929-a810-50f928ce9d12": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1050,
+                    "y": 150
+                },
+                "z": 2,
+                "parent": "fa159be2-95e8-4114-ae44-9353a773c550",
+                "embeds": [],
+                "isassociatedwith": [
+                    "947e394a-d2f3-467e-a56a-a236bfc52d50"
+                ],
+                "iscontainedinside": [
+                    "fa159be2-95e8-4114-ae44-9353a773c550"
+                ]
+            },
+            "c64a8751-ec82-49dc-9c4d-f0d01deba090": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 930,
+                    "y": 270
+                },
+                "z": 2,
+                "parent": "fa159be2-95e8-4114-ae44-9353a773c550",
+                "embeds": [],
+                "isassociatedwith": [
+                    "947e394a-d2f3-467e-a56a-a236bfc52d50"
+                ],
+                "iscontainedinside": [
+                    "fa159be2-95e8-4114-ae44-9353a773c550"
+                ]
+            },
+            "776a97fc-f840-41b1-9aef-a9aadab9c7ac": {
+                "source": {
+                    "id": "197ada66-61df-406e-8477-a5da343a1e40"
+                },
+                "target": {
+                    "id": "b8fce228-889f-47e3-b583-b64ef35c3776"
+                }
+            },
+            "f13ddd31-c041-44c8-ae3e-76e4bf2d1d9b": {
+                "size": {
+                    "width": 240,
+                    "height": 240
+                },
+                "position": {
+                    "x": 390,
+                    "y": 150
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [
+                    "12ba32e0-f855-43e0-9ecc-2f88524f7d60"
+                ],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "32ca23a7-99f3-40f7-acf7-75a8de5e7157": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1020,
+                    "y": 480
+                },
+                "z": 1,
+                "embeds": [],
+                "dependson": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "f0f83e36-56c7-4505-824d-70fd91345c29": {
+                "source": {
+                    "id": "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                },
+                "target": {
+                    "id": "32ca23a7-99f3-40f7-acf7-75a8de5e7157"
+                }
+            },
+            "12ba32e0-f855-43e0-9ecc-2f88524f7d60": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 420,
+                    "y": 210
+                },
+                "z": 3,
+                "parent": "f13ddd31-c041-44c8-ae3e-76e4bf2d1d9b",
+                "embeds": [],
+                "isassociatedwith": [
+                    "32ca23a7-99f3-40f7-acf7-75a8de5e7157"
+                ],
+                "iscontainedinside": [
+                    "f13ddd31-c041-44c8-ae3e-76e4bf2d1d9b"
+                ],
+                "dependson": [
+                    "f0f83e36-56c7-4505-824d-70fd91345c29"
+                ]
+            },
+            "e5368e62-6e55-44ee-b6d1-43296b7058ec": {
+                "size": {
+                    "width": 240,
+                    "height": 240
+                },
+                "position": {
+                    "x": 90,
+                    "y": 150
+                },
+                "z": 2,
+                "parent": "bdd243b8-5989-42ce-8180-cafdc78170b5",
+                "embeds": [
+                    "cf51193f-33bc-4ea2-8e87-9e41c3ef5fec"
+                ],
+                "iscontainedinside": [
+                    "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                ]
+            },
+            "cf51193f-33bc-4ea2-8e87-9e41c3ef5fec": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 120,
+                    "y": 210
+                },
+                "z": 3,
+                "parent": "e5368e62-6e55-44ee-b6d1-43296b7058ec",
+                "embeds": [],
+                "iscontainedinside": [
+                    "e5368e62-6e55-44ee-b6d1-43296b7058ec"
+                ],
+                "dependson": [
+                    "c64a8751-ec82-49dc-9c4d-f0d01deba090",
+                    "f0f83e36-56c7-4505-824d-70fd91345c29"
+                ]
+            },
+            "0042b644-9bd0-4c6e-9427-a7a1ed804114": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 120,
+                    "y": 510
+                },
+                "z": 3,
+                "parent": "197ada66-61df-406e-8477-a5da343a1e40",
+                "embeds": [],
+                "isassociatedwith": [
+                    "cf51193f-33bc-4ea2-8e87-9e41c3ef5fec"
+                ],
+                "iscontainedinside": [
+                    "197ada66-61df-406e-8477-a5da343a1e40"
+                ]
+            },
+            "d9752d49-aac2-4a1f-8479-ed236b4f1ed2": {
+                "source": {
+                    "id": "f13ddd31-c041-44c8-ae3e-76e4bf2d1d9b"
+                },
+                "target": {
+                    "id": "e5368e62-6e55-44ee-b6d1-43296b7058ec"
+                }
+            }
+        }
+    },
+    "Parameters": {
+        "InstancesDataDiskType": {
+            "Description": "Select the disk type.",
+            "Type": "String",
+            "Default": "gp2",
+            "AllowedValues": [
+                "standard",
+                "gp2"
+            ]
+        },
+        "InstancesDataDiskSize": {
+            "Description": "Disk size in GB, this must be between 1 and 1024 GB.",
+            "Type": "Number",
+            "MinValue": "1",
+            "MaxValue": "1024",
+            "Default": "10",
+            "ConstraintDescription": "Your Data Disk Instance size must be between 1 and 1024 GB."
+        },
+        "ApplicationPassword": {
+            "Description": "[Required] Admin password for WordPress - Between 8-32 characters; Include at least one digit, upper case letter and no special characters.",
+            "Type": "String",
+            "MinLength": 8,
+            "MaxLength": 32,
+            "AllowedPattern": "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])^([a-zA-Z0-9]{8,32})$",
+            "ConstraintDescription": "Your password must be between 8 and 32 characters, include at least one. digit, upper case letter and no special characters.",
+            "NoEcho": true
+        },
+        "ApplicationUsername": {
+            "Description": "IMPORTANT: This is the admin username you will use to log into the application, and the password you set below will correspond to this admin username. This is a default value, and can only be changed after you log in.",
+            "Type": "String",
+            "Default": "user",
+            "AllowedValues": [
+                "user"
+            ]
+        },
+        "SSHKeyName": {
+            "Description": "[Required] SSH key name.",
+            "Type": "AWS::EC2::KeyPair::KeyName",
+            "AllowedPattern": ".+",
+            "ConstraintDescription": "Your SSH Key cannot be blank. Please add an SSH key to the application."
+        },
+        "IPRangeSSH": {
+            "Description": "[Required] Set the IP or IP range for SSH connectivity to machine ; 127.0.0.1/32 is configured by default to disable remote SSH access. Set this to 0.0.0.0/0 to access secure shell from any IP.",
+            "Type": "String",
+            "MinLength": "9",
+            "MaxLength": "18",
+            "Default": "127.0.0.1/32",
+            "AllowedPattern": "^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})$",
+            "ConstraintDescription": "Your IP Range for SSH must be a valid IP CIDR range of the form x.x.x.x/x."
+        },
+        "IPRangeApplication": {
+            "Description": "[Required] Set this to 0.0.0.0/0 to allow anyone on the internet to access the application, and 127.0.0.1/32 to disable public access to the application. You can also configure specific IP address or IP Range access here.",
+            "Type": "String",
+            "MinLength": "9",
+            "MaxLength": "18",
+            "AllowedPattern": "^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})$",
+            "ConstraintDescription": "This value cannot be empty. Set this to 0.0.0.0/0 to allow anyone on the internet to access the application, and 127.0.0.1/32 to disable public access to the application."
+        },
+        "AvailabilityZone": {
+            "Type": "AWS::EC2::AvailabilityZone::Name",
+            "Description": "[Required] Primary Availability Zone for your deployment.",
+            "AllowedPattern": "^.+$",
+            "ConstraintDescription": "The Availability Zone cannot be blank."
+        },
+        "SecondAvailabilityZone": {
+            "Type": "AWS::EC2::AvailabilityZone::Name",
+            "Description": "[Required] This RDS deployment requires two availability zones. You must select the Additional Availability Zone to be different than the Primary Availability Zone.",
+            "AllowedPattern": "^.+$",
+            "ConstraintDescription": "The Additional Availability Zone cannot be blank."
+        },
+        "InstancesType": {
+            "Description": "Select the instance type for the WordPress instance. Please check that the selected instance type is available in your region.",
+            "Type": "String",
+            "Default": "m5.large",
+            "AllowedValues": [
+                "t2.small",
+                "t2.medium",
+                "t2.large",
+                "t2.xlarge",
+                "t2.2xlarge",
+                "t3.small",
+                "t3a.small",
+                "t3.medium",
+                "t3a.medium",
+                "t3.large",
+                "t3.xlarge",
+                "t3a.large",
+                "t3a.xlarge",
+                "t3.2xlarge",
+                "t3a.2xlarge",
+                "m3.medium",
+                "m3.large",
+                "m3.xlarge",
+                "m3.2xlarge",
+                "m4.large",
+                "m4.xlarge",
+                "m4.2xlarge",
+                "m4.4xlarge",
+                "m4.10xlarge",
+                "m4.16xlarge",
+                "m5.large",
+                "m5.xlarge",
+                "m5a.large",
+                "m5a.xlarge",
+                "m5ad.large",
+                "m5ad.xlarge",
+                "m5d.large",
+                "m5d.xlarge",
+                "m5dn.large",
+                "m5dn.xlarge",
+                "m5n.large",
+                "m5n.xlarge",
+                "m5.2xlarge",
+                "m5a.2xlarge",
+                "m5ad.2xlarge",
+                "m5d.2xlarge",
+                "m5dn.2xlarge",
+                "m5n.2xlarge",
+                "m5.4xlarge",
+                "m5a.4xlarge",
+                "m5ad.4xlarge",
+                "m5d.4xlarge",
+                "m5dn.4xlarge",
+                "m5n.4xlarge",
+                "m5a.8xlarge",
+                "m5ad.8xlarge",
+                "m5dn.8xlarge",
+                "m5n.8xlarge",
+                "m5.12xlarge",
+                "m5a.12xlarge",
+                "m5ad.12xlarge",
+                "m5d.12xlarge",
+                "m5dn.12xlarge",
+                "m5n.12xlarge",
+                "m5a.16xlarge",
+                "m5ad.16xlarge",
+                "m5d.16xlarge",
+                "m5dn.16xlarge",
+                "m5n.16xlarge",
+                "m5.24xlarge",
+                "m5a.24xlarge",
+                "m5ad.24xlarge",
+                "m5d.24xlarge",
+                "m5dn.24xlarge",
+                "m5n.24xlarge",
+                "cc2.8xlarge",
+                "c3.large",
+                "c3.xlarge",
+                "c3.2xlarge",
+                "c3.4xlarge",
+                "c3.8xlarge",
+                "c4.large",
+                "c4.xlarge",
+                "c4.2xlarge",
+                "c4.4xlarge",
+                "c4.8xlarge",
+                "c5.large",
+                "c5.xlarge",
+                "c5d.large",
+                "c5d.xlarge",
+                "c5.2xlarge",
+                "c5d.2xlarge",
+                "c5.4xlarge",
+                "c5d.4xlarge",
+                "c5d.9xlarge",
+                "c5.18xlarge",
+                "c5d.18xlarge",
+                "cr1.8xlarge",
+                "r3.large",
+                "r3.xlarge",
+                "r3.2xlarge",
+                "r3.4xlarge",
+                "r3.8xlarge",
+                "r4.large",
+                "r4.xlarge",
+                "r4.2xlarge",
+                "r4.4xlarge",
+                "r4.8xlarge",
+                "r4.16xlarge",
+                "r5.large",
+                "r5.metal",
+                "r5.xlarge",
+                "r5a.large",
+                "r5a.xlarge",
+                "r5ad.large",
+                "r5ad.xlarge",
+                "r5n.large",
+                "r5n.xlarge",
+                "r5.2xlarge",
+                "r5a.2xlarge",
+                "r5ad.2xlarge",
+                "r5n.2xlarge",
+                "r5.4xlarge",
+                "r5a.4xlarge",
+                "r5ad.4xlarge",
+                "r5n.4xlarge",
+                "r5.8xlarge",
+                "r5a.8xlarge",
+                "r5ad.8xlarge",
+                "r5n.8xlarge",
+                "r5.12xlarge",
+                "r5a.12xlarge",
+                "r5ad.12xlarge",
+                "r5n.12xlarge",
+                "r5.16xlarge",
+                "r5a.16xlarge",
+                "r5ad.16xlarge",
+                "r5n.16xlarge",
+                "r5.24xlarge",
+                "r5a.24xlarge",
+                "r5ad.24xlarge",
+                "r5n.24xlarge",
+                "r5d.large",
+                "r5d.metal",
+                "r5d.xlarge",
+                "r5dn.large",
+                "r5dn.xlarge",
+                "r5d.2xlarge",
+                "r5dn.2xlarge",
+                "r5d.4xlarge",
+                "r5dn.4xlarge",
+                "r5d.8xlarge",
+                "r5dn.8xlarge",
+                "r5d.12xlarge",
+                "r5dn.12xlarge",
+                "r5d.16xlarge",
+                "r5dn.16xlarge",
+                "r5d.24xlarge",
+                "r5dn.24xlarge",
+                "z1d.large",
+                "z1d.metal",
+                "z1d.xlarge",
+                "z1d.2xlarge",
+                "z1d.3xlarge",
+                "z1d.6xlarge",
+                "z1d.12xlarge",
+                "x1.16xlarge",
+                "x1.32xlarge",
+                "x1e.xlarge",
+                "x1e.2xlarge",
+                "x1e.4xlarge",
+                "x1e.8xlarge",
+                "x1e.16xlarge",
+                "x1e.32xlarge"
+            ]
+        },
+        "DatabasePassword": {
+            "Description": "[Required] Aurora database admin password for WordPress - Between 8-32 characters; Include at least one digit, upper case letter and no special characters. Please check that the selected instance type is available in your region.",
+            "Type": "String",
+            "MinLength": 8,
+            "MaxLength": 32,
+            "AllowedPattern": "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])^([a-zA-Z0-9]{8,32})$",
+            "ConstraintDescription": "Your database admin password must be between 8 and 32 characters, include at least one. digit, upper case letter and no special characters.",
+            "NoEcho": true
+        },
+        "DatabaseInstanceClass": {
+            "Description": "Select the instance type for your application database.",
+            "Type": "String",
+            "Default": "db.t3.medium",
+            "AllowedValues": [
+                "db.r4.large",
+                "db.r4.xlarge",
+                "db.r4.2xlarge",
+                "db.r4.4xlarge",
+                "db.r4.8xlarge",
+                "db.r5.large",
+                "db.r5.xlarge",
+                "db.r5.2xlarge",
+                "db.r5.4xlarge",
+                "db.r5.8xlarge",
+                "db.r5.12xlarge",
+                "db.t2.small",
+                "db.t2.medium",
+                "db.t3.small",
+                "db.t3.medium"
+            ]
+        },
+        "MultiAZ": {
+            "Description": "Create replica in a different Availability zone.",
+            "Type": "String",
+            "Default": "false",
+            "AllowedValues": [
+                "true",
+                "false"
+            ],
+            "ConstraintDescription": "Multi-AZ must be true or false."
+        }
+    },
+    "Conditions": {
+        "AlwaysTrue": {
+            "Fn::Equals": [
+                true,
+                true
+            ]
+        },
+        "AddIPRangeSSH": {
+            "Fn::Not": [
+                {
+                    "Fn::Equals": [
+                        {
+                            "Ref": "IPRangeSSH"
+                        },
+                        ""
+                    ]
+                }
+            ]
+        },
+        "AddIPRangeApplication": {
+            "Fn::Not": [
+                {
+                    "Fn::Equals": [
+                        {
+                            "Ref": "IPRangeApplication"
+                        },
+                        ""
+                    ]
+                }
+            ]
+        },
+        "AuroraMultiAZ": {
+            "Fn::Equals": [
+                {
+                    "Ref": "MultiAZ"
+                },
+                "true"
+            ]
+        }
+    },
+    "Mappings": {
+        "RegionMap": {
+            "us-east-1": {
+                "AMI": "ami-0d0f66dbcd59a4402"
+            },
+            "us-east-2": {
+                "AMI": "ami-0ca50fd19e3f048e9"
+            },
+            "us-west-1": {
+                "AMI": "ami-001c235369a0d30a3"
+            },
+            "us-gov-west-1": {
+                "AMI": "ami-33f7c852"
+            },
+            "us-gov-east-1": {
+                "AMI": "ami-d54ca3a4"
+            },
+            "us-west-2": {
+                "AMI": "ami-02d11289856f01437"
+            },
+            "ca-central-1": {
+                "AMI": "ami-04925c8c088a2de21"
+            },
+            "eu-central-1": {
+                "AMI": "ami-0121ee0952cb095f8"
+            },
+            "eu-west-1": {
+                "AMI": "ami-008c54abfe4a57046"
+            },
+            "eu-west-2": {
+                "AMI": "ami-0013dbf4695d31e95"
+            },
+            "eu-west-3": {
+                "AMI": "ami-08e24b4778f74bf49"
+            },
+            "eu-north-1": {
+                "AMI": "ami-05d1da18f873c352f"
+            },
+            "ap-southeast-1": {
+                "AMI": "ami-0c4e2c8a671951565"
+            },
+            "ap-southeast-2": {
+                "AMI": "ami-0dfe7d5c3fbbc07d1"
+            },
+            "ap-south-1": {
+                "AMI": "ami-06d1a1970c37e8779"
+            },
+            "ap-northeast-1": {
+                "AMI": "ami-06c2bb0b14e459b10"
+            },
+            "ap-northeast-2": {
+                "AMI": "ami-017f4b2419e68f94a"
+            },
+            "sa-east-1": {
+                "AMI": "ami-0dfbaaaa9a7966545"
+            }
+        }
+    },
+    "Outputs": {
+        "URL": {
+            "Description": "URL to application",
+            "Value": {
+                "Fn::Join": [
+                    "",
+                    [
+                        "http://",
+                        {
+                            "Fn::GetAtt": [
+                                "Machine",
+                                "PublicDnsName"
+                            ]
+                        }
+                    ]
+                ]
+            }
+        },
+        "PublicIp": {
+            "Description": "Public IP address for WordPress application",
+            "Value": {
+                "Fn::GetAtt": [
+                    "Machine",
+                    "PublicIp"
+                ]
+            }
+        },
+        "PublicDnsName": {
+            "Description": "Public DNS name for your WordPress application",
+            "Value": {
+                "Fn::GetAtt": [
+                    "Machine",
+                    "PublicDnsName"
+                ]
+            }
+        }
+    },
+    "Resources": {
+        "Vpc": {
+            "Type": "AWS::EC2::VPC",
+            "Properties": {
+                "CidrBlock": "10.0.0.0/16",
+                "Tags": [
+                    {
+                        "Value": {
+                            "Ref": "AWS::StackName"
+                        },
+                        "Key": "Application"
+                    },
+                    {
+                        "Value": "Public",
+                        "Key": "Network"
+                    }
+                ],
+                "EnableDnsHostnames": "true",
+                "EnableDnsSupport": "true"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "bdd243b8-5989-42ce-8180-cafdc78170b5"
+                }
+            }
+        },
+        "PublicSubnet": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "CidrBlock": "10.0.4.0/22",
+                "AvailabilityZone": {
+                    "Ref": "AvailabilityZone"
+                },
+                "Tags": [
+                    {
+                        "Value": {
+                            "Ref": "AWS::StackName"
+                        },
+                        "Key": "Application"
+                    },
+                    {
+                        "Value": "Public",
+                        "Key": "Network"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "e5368e62-6e55-44ee-b6d1-43296b7058ec"
+                }
+            }
+        },
+        "InternetGateway": {
+            "Type": "AWS::EC2::InternetGateway",
+            "DependsOn": "Vpc",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Value": {
+                            "Ref": "AWS::StackName"
+                        },
+                        "Key": "Application"
+                    },
+                    {
+                        "Value": "Public",
+                        "Key": "Network"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "32ca23a7-99f3-40f7-acf7-75a8de5e7157"
+                }
+            }
+        },
+        "GatewayToInternet": {
+            "Type": "AWS::EC2::VPCGatewayAttachment",
+            "DependsOn": "InternetGateway",
+            "Properties": {
+                "InternetGatewayId": {
+                    "Ref": "InternetGateway"
+                },
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f0f83e36-56c7-4505-824d-70fd91345c29"
+                }
+            }
+        },
+        "PublicRouteTable": {
+            "Type": "AWS::EC2::RouteTable",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Value": {
+                            "Ref": "AWS::StackName"
+                        },
+                        "Key": "Application"
+                    },
+                    {
+                        "Value": "Public",
+                        "Key": "Network"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f13ddd31-c041-44c8-ae3e-76e4bf2d1d9b"
+                }
+            }
+        },
+        "PublicRoute": {
+            "Type": "AWS::EC2::Route",
+            "DependsOn": "GatewayToInternet",
+            "Properties": {
+                "RouteTableId": {
+                    "Ref": "PublicRouteTable"
+                },
+                "DestinationCidrBlock": "0.0.0.0/0",
+                "GatewayId": {
+                    "Ref": "InternetGateway"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "12ba32e0-f855-43e0-9ecc-2f88524f7d60"
+                }
+            }
+        },
+        "PublicSubnetRouteTableAssociation": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "PublicSubnet"
+                },
+                "RouteTableId": {
+                    "Ref": "PublicRouteTable"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "d9752d49-aac2-4a1f-8479-ed236b4f1ed2"
+                }
+            }
+        },
+        "PrivateSubnet": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "CidrBlock": "10.0.0.0/22",
+                "AvailabilityZone": {
+                    "Ref": "AvailabilityZone"
+                },
+                "Tags": [
+                    {
+                        "Value": {
+                            "Ref": "AWS::StackName"
+                        },
+                        "Key": "Application"
+                    },
+                    {
+                        "Value": "Private",
+                        "Key": "Network"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "b8fce228-889f-47e3-b583-b64ef35c3776"
+                }
+            }
+        },
+        "PrivateRouteTable": {
+            "Type": "AWS::EC2::RouteTable",
+            "Properties": {
+                "Tags": [
+                    {
+                        "Value": {
+                            "Ref": "AWS::StackName"
+                        },
+                        "Key": "Application"
+                    },
+                    {
+                        "Value": "Public",
+                        "Key": "Network"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "197ada66-61df-406e-8477-a5da343a1e40"
+                }
+            }
+        },
+        "PrivateSubnetRouteTableAssociation": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "PrivateSubnet"
+                },
+                "RouteTableId": {
+                    "Ref": "PrivateRouteTable"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "776a97fc-f840-41b1-9aef-a9aadab9c7ac"
+                }
+            }
+        },
+        "PrivateRoute": {
+            "Type": "AWS::EC2::Route",
+            "Properties": {
+                "InstanceId": {
+                    "Ref": "Machine"
+                },
+                "RouteTableId": {
+                    "Ref": "PrivateRouteTable"
+                },
+                "DestinationCidrBlock": "0.0.0.0/0"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "0042b644-9bd0-4c6e-9427-a7a1ed804114"
+                }
+            }
+        },
+        "SharedSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Security Group for the internal communications",
+                "SecurityGroupIngress": [],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "d65c2aa1-fcf3-4fe3-96d5-20ae8a1b46a7"
+                }
+            }
+        },
+        "SharedSecurityGroupIngress0": {
+            "Type": "AWS::EC2::SecurityGroupIngress",
+            "DependsOn": "SharedSecurityGroup",
+            "Properties": {
+                "IpProtocol": "-1",
+                "FromPort": "3306",
+                "ToPort": "3306",
+                "SourceSecurityGroupId": {
+                    "Fn::GetAtt": [
+                        "SharedSecurityGroup",
+                        "GroupId"
+                    ]
+                },
+                "GroupId": {
+                    "Fn::GetAtt": [
+                        "SharedSecurityGroup",
+                        "GroupId"
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "82e228f1-74d0-4f2b-adde-d55bdde0a607"
+                }
+            }
+        },
+        "SecondPrivateSubnet": {
+            "Type": "AWS::EC2::Subnet",
+            "Properties": {
+                "CidrBlock": "10.0.8.0/22",
+                "AvailabilityZone": {
+                    "Ref": "SecondAvailabilityZone"
+                },
+                "Tags": [
+                    {
+                        "Value": {
+                            "Ref": "AWS::StackName"
+                        },
+                        "Key": "Application"
+                    },
+                    {
+                        "Value": "Private",
+                        "Key": "Network"
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "77a8c444-5136-428b-9be8-8bdde06a3a60"
+                }
+            }
+        },
+        "SecondPrivateSubnetRouteTableAssociation": {
+            "Type": "AWS::EC2::SubnetRouteTableAssociation",
+            "Properties": {
+                "SubnetId": {
+                    "Ref": "SecondPrivateSubnet"
+                },
+                "RouteTableId": {
+                    "Ref": "PrivateRouteTable"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f5d9a32c-31d9-4294-a915-5a0149452e19"
+                }
+            }
+        },
+        "FrontendSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Frontend instance security group",
+                "SecurityGroupIngress": [
+                    {
+                        "Fn::If": [
+                            "AddIPRangeSSH",
+                            {
+                                "IpProtocol": "tcp",
+                                "FromPort": 22,
+                                "ToPort": 22,
+                                "CidrIp": {
+                                    "Ref": "IPRangeSSH"
+                                }
+                            },
+                            "AWS::NoValue"
+                        ]
+                    },
+                    {
+                        "Fn::If": [
+                            "AddIPRangeApplication",
+                            {
+                                "IpProtocol": "tcp",
+                                "FromPort": 80,
+                                "ToPort": 80,
+                                "CidrIp": {
+                                    "Ref": "IPRangeApplication"
+                                }
+                            },
+                            "AWS::NoValue"
+                        ]
+                    },
+                    {
+                        "Fn::If": [
+                            "AddIPRangeApplication",
+                            {
+                                "IpProtocol": "tcp",
+                                "FromPort": 443,
+                                "ToPort": 443,
+                                "CidrIp": {
+                                    "Ref": "IPRangeApplication"
+                                }
+                            },
+                            "AWS::NoValue"
+                        ]
+                    }
+                ],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "86bd40b3-777a-4818-80a8-4e857f28f858"
+                }
+            }
+        },
+        "DatabaseSecurityGroup": {
+            "Type": "AWS::EC2::SecurityGroup",
+            "Properties": {
+                "GroupDescription": "Database instance security group",
+                "SecurityGroupIngress": [],
+                "VpcId": {
+                    "Ref": "Vpc"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "65e11640-c825-4a0b-b2e9-eeeec75fa462"
+                }
+            }
+        },
+        "Machine": {
+            "Type": "AWS::EC2::Instance",
+            "Description": "Frontend machine instance.",
+            "CreationPolicy": {
+                "ResourceSignal": {
+                    "Timeout": "PT15M"
+                }
+            },
+            "DependsOn": [
+                "DatabaseInstance",
+                "GatewayToInternet"
+            ],
+            "Properties": {
+                "KeyName": {
+                    "Ref": "SSHKeyName"
+                },
+                "ImageId": {
+                    "Fn::FindInMap": [
+                        "RegionMap",
+                        {
+                            "Ref": "AWS::Region"
+                        },
+                        "AMI"
+                    ]
+                },
+                "InstanceType": {
+                    "Ref": "InstancesType"
+                },
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "/dev/xvdc",
+                        "Ebs": {
+                            "VolumeType": {
+                                "Ref": "InstancesDataDiskType"
+                            },
+                            "VolumeSize": {
+                                "Ref": "InstancesDataDiskSize"
+                            }
+                        }
+                    }
+                ],
+                "NetworkInterfaces": [
+                    {
+                        "GroupSet": [
+                            {
+                                "Ref": "FrontendSecurityGroup"
+                            },
+                            {
+                                "Ref": "SharedSecurityGroup"
+                            }
+                        ],
+                        "AssociatePublicIpAddress": "true",
+                        "SubnetId": {
+                            "Ref": "PublicSubnet"
+                        },
+                        "DeviceIndex": "0",
+                        "DeleteOnTermination": "true"
+                    }
+                ],
+                "SourceDestCheck": "false",
+                "UserData": {
+                    "Fn::Base64": {
+                        "Fn::Join": [
+                            "",
+                            [
+                                "#!/bin/bash\n",
+                                "\n#PROVISIONER_PEER_PASSWORD_INPUT=",
+                                {
+                                    "Ref": "AWS::AccountId"
+                                },
+                                " ",
+                                {
+                                    "Ref": "AWS::StackId"
+                                },
+                                " ",
+                                {
+                                    "Ref": "AWS::Region"
+                                },
+                                "\n#PROVISIONER_PEER_PASSWORD=",
+                                {
+                                    "Ref": "DatabasePassword"
+                                },
+                                "\n#PROVISIONER_SHARED_UNIQUE_ID_INPUT=",
+                                {
+                                    "Ref": "AWS::AccountId"
+                                },
+                                " ",
+                                {
+                                    "Ref": "AWS::StackId"
+                                },
+                                " ",
+                                {
+                                    "Ref": "AWS::Region"
+                                },
+                                "\n# PROVISIONER_CFN_RESOURCE=Machine",
+                                "\n# PROVISIONER_CFN_STACK=",
+                                {
+                                    "Ref": "AWS::StackName"
+                                },
+                                "\n# PROVISIONER_CFN_REGION=",
+                                {
+                                    "Ref": "AWS::Region"
+                                },
+                                "\n# PROVISIONER_DATA_DISK=/dev/xvdc",
+                                "\n#PROVISIONER_TIER=frontend",
+                                "\n#PROVISIONER_PEER_ADDRESS=",
+                                {
+                                    "Fn::GetAtt": [
+                                        "DatabaseCluster",
+                                        "Endpoint.Address"
+                                    ]
+                                },
+                                "\n#PROVISIONER_APP_PASSWORD=",
+                                {
+                                    "Ref": "ApplicationPassword"
+                                }
+                            ]
+                        ]
+                    }
+                },
+                "Tags": [
+                    {
+                        "Value": "wordpress-frontend",
+                        "Key": "role"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "cf51193f-33bc-4ea2-8e87-9e41c3ef5fec"
+                }
+            }
+        },
+        "DatabaseSubnetGroup": {
+            "Type": "AWS::RDS::DBSubnetGroup",
+            "Properties": {
+                "DBSubnetGroupDescription": "Database instance subnet group.",
+                "SubnetIds": [
+                    {
+                        "Ref": "PrivateSubnet"
+                    },
+                    {
+                        "Ref": "SecondPrivateSubnet"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "fa159be2-95e8-4114-ae44-9353a773c550"
+                }
+            }
+        },
+        "DatabaseClusterParameterGroup": {
+            "Type": "AWS::RDS::DBClusterParameterGroup",
+            "Properties": {
+                "Description": "Configure database character set and collation.",
+                "Family": "aurora5.6",
+                "Parameters": {
+                    "character_set_client": "utf8mb4",
+                    "character_set_connection": "utf8mb4",
+                    "character_set_results": "utf8mb4",
+                    "character_set_server": "utf8mb4",
+                    "character_set_database": "utf8mb4",
+                    "collation_connection": "utf8mb4_general_ci",
+                    "collation_server": "utf8mb4_general_ci"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "67253fca-371a-4066-b077-ae57e7d5d820"
+                }
+            }
+        },
+        "DatabaseCluster": {
+            "Type": "AWS::RDS::DBCluster",
+            "Properties": {
+                "Engine": "aurora",
+                "DBSubnetGroupName": {
+                    "Ref": "DatabaseSubnetGroup"
+                },
+                "MasterUsername": "root",
+                "MasterUserPassword": {
+                    "Ref": "DatabasePassword"
+                },
+                "DBClusterParameterGroupName": {
+                    "Ref": "DatabaseClusterParameterGroup"
+                },
+                "VpcSecurityGroupIds": [
+                    {
+                        "Ref": "DatabaseSecurityGroup"
+                    },
+                    {
+                        "Ref": "SharedSecurityGroup"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "947e394a-d2f3-467e-a56a-a236bfc52d50"
+                }
+            }
+        },
+        "DatabaseInstance": {
+            "Type": "AWS::RDS::DBInstance",
+            "DeletionPolicy": "Delete",
+            "Properties": {
+                "Engine": "aurora",
+                "DBClusterIdentifier": {
+                    "Ref": "DatabaseCluster"
+                },
+                "DBInstanceIdentifier": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            {
+                                "Ref": "AWS::StackName"
+                            },
+                            "-DatabaseMachine"
+                        ]
+                    ]
+                },
+                "DBSubnetGroupName": {
+                    "Ref": "DatabaseSubnetGroup"
+                },
+                "DBInstanceClass": {
+                    "Ref": "DatabaseInstanceClass"
+                },
+                "Tags": [
+                    {
+                        "Value": "wordpress-database",
+                        "Key": "role"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "c64a8751-ec82-49dc-9c4d-f0d01deba090"
+                }
+            }
+        },
+        "DatabaseReplicaInstance": {
+            "Type": "AWS::RDS::DBInstance",
+            "Condition": "AuroraMultiAZ",
+            "DeletionPolicy": "Delete",
+            "Properties": {
+                "Engine": "aurora",
+                "DBClusterIdentifier": {
+                    "Ref": "DatabaseCluster"
+                },
+                "DBInstanceIdentifier": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            {
+                                "Ref": "AWS::StackName"
+                            },
+                            "-DatabaseReplicaMachine"
+                        ]
+                    ]
+                },
+                "DBSubnetGroupName": {
+                    "Ref": "DatabaseSubnetGroup"
+                },
+                "DBInstanceClass": {
+                    "Ref": "DatabaseInstanceClass"
+                },
+                "Tags": [
+                    {
+                        "Value": "wordpress-database-replica",
+                        "Key": "role"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "d508c6a3-a32c-4929-a810-50f928ce9d12"
+                }
+            }
+        }
+    }
+}
